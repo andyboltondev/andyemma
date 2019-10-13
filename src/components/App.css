@@ -1,0 +1,64 @@
+.counter {
+  text-align: center;
+}
+
+.counter__title {
+  font-size: 2.369rem;
+  font-weight: 600;
+}
+
+.counter__subtitle {
+  display: block;
+  margin: 0.2em 0 1.333em;
+  color: var(--secondary);
+  font-weight: 100;
+}
+
+.counter__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+.counter__item {
+  position: relative;
+  margin: 0 1em 2em;
+}
+
+.counter__value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 120px;
+  line-height: 120px;
+  font-size: 3.157rem;
+}
+
+.counter__label {
+  display: block;
+  margin-top: 0.5em;
+  text-transform: uppercase;
+}
+
+.progress {
+  transform: rotate(-90deg);
+}
+
+.progress__meter,
+.progress__value {
+  fill: none;
+}
+
+.progress__meter {
+  stroke: var(--light);
+  opacity: 0.1;
+}
+
+.progress__value {
+  stroke: var(--primary);
+  stroke-linecap: round;
+}
