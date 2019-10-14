@@ -76,7 +76,6 @@ class App extends React.Component {
       const label = value !== 1 ? unit : unit.replace(/s$/i, '');
 
       const percentage = 100 - percentages[period][unit];
-      console.log(`${unit} Percentage ${percentage}`);
 
       const radius = 54;
       const circumference = 2 * Math.PI * radius;
