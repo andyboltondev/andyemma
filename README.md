@@ -1,3 +1,7 @@
+A fun and silly project that counts up the time I have been with my partner. Created to help improve my skills in JavaScript and React aswell as testing out circular SVG progress indicators :)
+
+See it in action: [AndyEmma.com](https://andyemma.com).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
