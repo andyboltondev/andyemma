@@ -41,16 +41,32 @@ class App extends React.Component {
     });
   };
 
-  getOrdinalSuffix = number => {
-    if (number % 10 === 1 && number !== 11) return 'st';
-    if (number % 10 === 2 && number !== 12) return 'nd';
-    if (number % 10 === 3 && number !== 13) return 'rd';
-    return 'th';
+  // getOrdinalSuffix = number => {
+  //   if (number % 10 === 1 && number !== 11) return 'st';
+  //   if (number % 10 === 2 && number !== 12) return 'nd';
+  //   if (number % 10 === 3 && number !== 13) return 'rd';
+  //   return 'th';
+  // };
+
+  getNumberWithOrdinal = number => {
+    const pr = new Intl.PluralRules('en-GB', { type: 'ordinal' });
+    const ordinals = {
+      one: 'st',
+      two: 'nd',
+      few: 'rd',
+      many: 'th',
+      zero: 'th',
+      other: 'th',
+    };
+
+    return `${number}${ordinals[pr.select(number)]}`;
   };
 
   formatDate = timestamp => {
     const date = new Date(timestamp);
-    const ordinal = this.getOrdinalSuffix(date.getDate);
+    const dateNo = date.getDate();
+    // const ordinal = this.getOrdinalSuffix(date.getDate);
+    const ordinal = this.getNumberWithOrdinal(dateNo);
     const formattedDate = date
       .toLocaleDateString('en-GB', {
         weekday: 'long',
@@ -59,7 +75,7 @@ class App extends React.Component {
         year: 'numeric',
       })
       .replace(',', '')
-      .replace(` ${date.getDate()} `, ` ${date.getDate()}${ordinal} `);
+      .replace(dateNo, ordinal);
 
     return formattedDate;
   };
